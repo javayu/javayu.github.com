@@ -62,5 +62,5 @@ c.	multiple layer of template:  `List<List<edge>>`,  the `>>` is not supported b
 
 d.	Conversion between `string` and `char[]` . Some implicit conversion is supported by Microsoft but g++ holds tight on it.
 
-e. friend class Sth;  the "class" keyword is mandatory for g++
+e. friend class Sth;  the ``class`` keyword is mandatory for g++
 4.  The meaning for `-Wreorder` of g++: [here](http://stackoverflow.com/questions/1828037/whats-the-point-of-g-wreorder)
