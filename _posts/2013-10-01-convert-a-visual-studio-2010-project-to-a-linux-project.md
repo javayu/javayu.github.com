@@ -61,4 +61,6 @@ b.	Giving an rvalue as input where a non-const reference is required. This is si
 c.	multiple layer of template:  `List<List<edge>>`,  the `>>` is not supported by g++ unless c++ 0x support specified.
 
 d.	Conversion between `string` and `char[]` . Some implicit conversion is supported by Microsoft but g++ holds tight on it.
+
+e. friend class Sth;  the "class" keyword is mandatory for g++
 4.  The meaning for `-Wreorder` of g++: [here](http://stackoverflow.com/questions/1828037/whats-the-point-of-g-wreorder)
