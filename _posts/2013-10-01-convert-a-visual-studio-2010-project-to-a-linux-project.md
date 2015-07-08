@@ -7,16 +7,15 @@ tags: [Coding, Linux, Visual studio]
 ---
 {% include JB/setup %}
 
-##In short
+## In short
 The major steps are:
 
 1.	Remove stdafx.h and improve dependency
 1.	Modify signature for "main" function
 1.	Setup Makefile in Linux system.
-1.	<s>Substitute all "pragma once"(optional)</s>
 2.	Modify implementation details
 	
-##Modify signature for "main" function
+## Modify signature for "main" function
 Modify the main function name from "int _tmain(int argc, _TCHAR* argv[])" to "int main()". "_tmain" is not  well recognized by Linux compilers like g++.
 
 ## Remove stdafx.h and improve dependency
@@ -27,7 +26,6 @@ To remove this file, first check the project's properties. Right click on projec
 Next step is to remove dependencies on 'stdafx.h' and 'stdafx.cpp' . Organize header files according to [Google Style Guide](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Header_Files) and [here](http://stackoverflow.com/questions/346058/c-class-header-files-organization).
 
 ## Substitute 'pragma once'
-<s>'pragma once' is a macro unique to Visual Studio. In Linux or other platforms including Windows, the #ifndef macro is a more widely used standard approach.</s> 
 The syntax for #ifndef is:
 
 {%highlight c++ linenos%}
@@ -38,8 +36,6 @@ The syntax for #ifndef is:
 ..
 #endif
 {%endhighlight%}
-
-<s>This approach is also accepted by Visual Studio.</s>
 
 According to [wikipedia](http://en.wikipedia.org/wiki/Pragma_once): 
 >In the C and C++ programming languages, #pragma once is a non-standard but widely supported preprocessor directive designed to cause the current source file to be included only once in a single compilation. Thus, #pragma once serves the same purpose as #include guards, but with several advantages, including: less code, avoidance of name clashes, and sometimes improved compile speed.
